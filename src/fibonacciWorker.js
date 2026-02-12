@@ -1,5 +1,5 @@
 self.onmessage = (e) => {
-  const { num } = e.data;
+  const { n } = e.data;
   let result = null;
 
   const fibonacci = (n) => {
@@ -8,7 +8,7 @@ self.onmessage = (e) => {
     return fibonacci(n - 1) + fibonacci(n - 2);
   };
 
-  result = fibonacci(num);
+  result = fibonacci(n);
   self.postMessage(result);
 };
 

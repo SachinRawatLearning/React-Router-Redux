@@ -76,12 +76,12 @@ const router = createBrowserRouter([
       {
         path: "settings",
         element: <Settings />,
-        loader: requireRole("settings"),
+        loader: () => requireRole("settings"),
       },
       {
         path: "users",
         element: <Users />,
-        loader: requireRole("users"),
+        loader: () => requireRole("users"),
       },
       {
         path: "webworkers",
@@ -90,6 +90,11 @@ const router = createBrowserRouter([
       {
         path: "fibonacci",
         element: <FibonacciComponent />,
+      },
+      {
+        path: "users/:id",
+        element: <Users />,
+        loader: () => requireRole("users"),
       },
     ],
   },
