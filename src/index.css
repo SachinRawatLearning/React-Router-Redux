@@ -1,68 +1,81 @@
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* In your main CSS file (e.g., App.css) */
+:root {
+  --font-family: "Arial";
+  --page-background-color: #ffffff;
+  --text-color: #000000;
+  --item-border-color: #000000;
+  --item-background-color: #ffffff;
+  --router-active-color: #0000ff;
+  --item-hover-color: #eee;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.dark-theme {
+  --font-family: "Arial";
+  --page-background-color: #121212;
+  --text-color: #ffffff;
+  --item-border-color: #ffffff;
+  --item-background-color: #121212;
+  --router-active-color: #ffff00;
+  --item-hover-color: #333;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+/* Apply the variables to your components */
+.app-container {
+  font-family: var(--font-family);
+  background-color: var(--page-background-color);
+  color: var(--text-color);
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: var(--item-background-color);
+  border-color: var(--item-border-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: var(--item-hover-color);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--item-border-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+a:hover {
+  background-color: var(--item-hover-color);
+}
+
+.active-link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--router-active-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}

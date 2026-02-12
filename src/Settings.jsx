@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { increment, decrement } from "./counterSlice";
 import { useSelector, useDispatch } from "react-redux";
+import "./index.css";
 const Settings = () => {
   const count = useSelector((state) => state.counterReducer.value);
   const dispatch = useDispatch();
   return (
     <>
-      <button onClick={() => dispatch(increment())}>Count: {count}</button>
+      <button className="increment-btn" onClick={() => dispatch(increment())}>
+        Increment: {count}
+      </button>
+      <span></span>
+      <button className="decrement-btn" onClick={() => dispatch(decrement())}>
+        Decrement: {count}
+      </button>
     </>
   );
 };
